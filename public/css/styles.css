@@ -1,0 +1,28 @@
+.inputField {
+  width: 400px;
+  height: 25px;
+  border-radius: 5px;
+}
+
+.inputButton{
+  width: 80px;
+  height: 25px;
+}
+
+.todoSection {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 700px;
+}
+
+.completeButton {
+  width: 150px;
+  height: 25px;
+  border-radius: 5px;
+}
+
+.todoItem {
+  width: 400px;
+  margin-left: 20px;
+}

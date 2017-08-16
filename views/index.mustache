@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="/css/styles.css">
     <meta charset="utf-8">
     <title></title>
   </head>
   <body>
-    HELLO
+      <form action="/" method="post">
+        <div class="">
+          <!-- <label for=""></label> -->
+          <input class="inputField" type="text" name="todo" value="" placeholder="What do you have to do?">
+          <input class="inputButton" type="submit" value="Add todo">
+        </div>
+      </form>
+
+
+      <!-- <div class="uncompletedTasks"> -->
+      <form class="" action="/completed" method="post">
+        <div class="todoSection">
+          {{#todos}}
+          <button class= "completeButton" type="submit" name="button" value="{{.}}">Mark Complete</button>
+          <h3 class="todoItem">{{.}}</h3>
+          {{/todos}}
+        </div>
+      </form>
+      <!-- </div> -->
+
+      <div class="completedTasks">
+        <h3>Completed Tasks</h3>
+          {{#completed}}
+          <h3>{{.}}</h3>
+          {{/completed}}
+      </div>
 
   </body>
 </html>
