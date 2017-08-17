@@ -6,32 +6,33 @@
     <title></title>
   </head>
   <body>
+    <div class="main">
+
       <form action="/" method="post">
-        <div class="">
-          <!-- <label for=""></label> -->
+        <div class="inputWrapper">
           <input class="inputField" type="text" name="todo" value="" placeholder="What do you have to do?">
-          <input class="inputButton" type="submit" value="Add todo">
+          <input class="inputButton" type="submit" value="Add Task">
         </div>
       </form>
+      <div class="taskContent">
+        <h3 id="todoHeader">Incomplete Tasks</h3>
+        <form class="" action="/completed" method="post">
+          <div class="todoSection">
+            {{#todos}}
+            <button class= "completeButton" type="submit" name="button" value="{{.}}">I'm Done!</button>
+            <h3 class="todoItem">{{.}}</h3>
+            {{/todos}}
+          </div>
+        </form>
 
-
-      <!-- <div class="uncompletedTasks"> -->
-      <form class="" action="/completed" method="post">
-        <div class="todoSection">
-          {{#todos}}
-          <button class= "completeButton" type="submit" name="button" value="{{.}}">Mark Complete</button>
-          <h3 class="todoItem">{{.}}</h3>
-          {{/todos}}
-        </div>
-      </form>
-      <!-- </div> -->
-
-      <div class="completedTasks">
-        <h3>Completed Tasks</h3>
+        <div class="completedTasks">
+          <h3 id="completeHeader">Completed Tasks</h3>
           {{#completed}}
-          <h3>{{.}}</h3>
+          <h3 class ="completedItems">{{.}}</h3>
           {{/completed}}
-      </div>
+        </div>
 
+      </div>
+    </div>
   </body>
 </html>

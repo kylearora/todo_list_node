@@ -9,18 +9,9 @@ app.use(express.static("public"))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(expressValidator())
 
+const todos = [];
 
-const todos = [
-    "Wash the car",
-    "Learn Node",
-    "Catch up on some projects",
-    "Stop bugging Reggie",
-    "Dont catch the zZz in class"
-];
-
-const completed = [
-  
-];
+const completed = [];
 
 app.get("/", function (req, res) {
   res.render('index', {
@@ -35,7 +26,10 @@ app.post("/", function (req, res) {
 })
 
 app.post("/completed", function (req, res) {
-  completed.push(req.body.button);
+  let remove = req.body.button
+  todos.splice(todos.indexOf(remove),1
+  );
+  completed.push(remove);
   res.redirect('/');
 })
 
